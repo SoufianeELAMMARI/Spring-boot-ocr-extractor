@@ -20,6 +20,8 @@ public class CurrencyocrApplication {
             System.out.println(">>>>>>>" + value);
              value = ImageParse.parseImage("l.jpg");
             System.out.println(">>>>>>>" + value);
+            value = ImageParse.parseImage("p.jpg");
+            System.out.println(">>>>>>>" + value);
         };
     }
 }
