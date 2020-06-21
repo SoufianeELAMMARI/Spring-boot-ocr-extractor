@@ -3,6 +3,8 @@ package com.elammari.leadExtractor;
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
+import org.imgscalr.Scalr;
+
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
@@ -16,17 +18,10 @@ public class ImageParse {
         File imageFile = new File(filePath);
         ITesseract instance = new Tesseract();
         instance.setLanguage("fra");
-
         try {
             BufferedImage in = ImageIO.read(imageFile);
-
-            BufferedImage newImage = new BufferedImage(
-                    in.getWidth(), in.getHeight(), BufferedImage.TYPE_INT_ARGB_PRE);
-
-            Graphics2D g = newImage.createGraphics();
-            g.drawImage(in, 0, 0, null);
-            g.dispose();
-
+            BufferedImage newImage =
+                    Scalr.resize(in, Scalr.Method.ULTRA_QUALITY, 1480, 650);
             String result = instance.doOCR(newImage);
             return result;
 

@@ -16,7 +16,7 @@ public class CurrencyocrApplication {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-            String value = ImageParse.parseImage("z.jpg");
+            String value = ImageParse.parseImage("test.png");
             System.out.println(">>>>>>>" + value);
 
         };
