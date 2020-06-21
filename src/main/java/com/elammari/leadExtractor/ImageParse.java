@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class ImageParse {
 
@@ -18,10 +19,12 @@ public class ImageParse {
         File imageFile = new File(filePath);
         ITesseract instance = new Tesseract();
         instance.setLanguage("fra");
+       // instance.setDatapath("D://tessdata");
         try {
             BufferedImage in = ImageIO.read(imageFile);
             BufferedImage newImage =
                     Scalr.resize(in, Scalr.Method.ULTRA_QUALITY, 1480, 650);
+
             String result = instance.doOCR(newImage);
             return result;
 
