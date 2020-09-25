@@ -1,5 +1,6 @@
 package com.elammari.leadExtractor;
 
+import com.elammari.leadExtractor.utils.ImageParse;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,12 +17,9 @@ public class CurrencyocrApplication {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-            String value = ImageParse.parseImage("a.jpg");
+            String value = ImageParse.parseImage("spring.jpg");
             System.out.println(">>>>>>>" + value);
-             value = ImageParse.parseImage("l.jpg");
-            System.out.println(">>>>>>>" + value);
-            value = ImageParse.parseImage("p.jpg");
-            System.out.println(">>>>>>>" + value);
+
         };
     }
 }

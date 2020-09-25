@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.elammari</groupId>
-	<artifactId>businessCardLeadGenerator</artifactId>
+	<artifactId>OCR</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>CardToLead</name>
-	<description>Business Card Lead extractor</description>
+	<name>OCR</name>
+	<description>Image text extractor</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
